@@ -30,6 +30,7 @@ To install BugBuddy, ensure you have Node.js installed, then run:
 ## Usage
 BugBuddy offers simple commands for all your debugging needs:
 
+
 ## 1. Analyze an Error Message Directly
 Use the bugbuddy check command to input an error message directly into the terminal.
 
@@ -39,6 +40,7 @@ Example
 ```
 You will be prompted to enter your error message.
 BugBuddy will then analyze the error and provide debugging insights, such as the likely cause and suggestions for fixes.
+
 
 ## 2. Analyze a JavaScript File
 Use the bugbuddy check -f <file> command to scan a JavaScript file for errors.
@@ -51,6 +53,7 @@ BugBuddy will:
 - Parse the <path-to-file> eg app.js file.
 - Identify and analyze errors in your code.
 - Provide AI-powered suggestions for fixing the errors.
+
 
 ## 3. Analyze and fix Automatically
 Use the bugbuddy check -f <file> --fix command to analyze the file and apply suggested fixes directly.
@@ -65,3 +68,23 @@ BugBuddy will:
 - Apply fixes directly to the file (with a backup created automatically).
 
 
+## Contributing
+We welcome contribution  to BugBuddy! Please follow these steps:
+
+## 1. Fork the repository
+## 2. Create a new branch:
+```bash
+    git checkout -b feature/your-feature-name
+```
+## 3. Make your changes and commit
+```bash
+    git commit -m "Add your commit message"
+```
+## 4. Push to your branch:
+```bash
+    git push origin feature/your-feature-name
+```
+## 5. Submit a pull request
+
+Happy Debugging!
+The flight has landed successfully!!!🎉✈️
