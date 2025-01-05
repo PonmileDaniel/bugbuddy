@@ -33,13 +33,35 @@ BugBuddy offers simple commands for all your debugging needs:
 ## 1. Analyze an Error Message Directly
 Use the bugbuddy check command to input an error message directly into the terminal.
 
+Example
 ```bash
   bugbuddy check
 ```
 You will be prompted to enter your error message.
 BugBuddy will then analyze the error and provide debugging insights, such as the likely cause and suggestions for fixes.
 
+## 2. Analyze a JavaScript File
+Use the bugbuddy check -f <file> command to scan a JavaScript file for errors.
 
-bugbuddy check -f app.js --fix
-bugbuddy check 
-bugbuddy check -f app.js
+Example
+```bash
+  bugbuddy check -f <path-to-file>
+```
+BugBuddy will:
+- Parse the <path-to-file> eg app.js file.
+- Identify and analyze errors in your code.
+- Provide AI-powered suggestions for fixing the errors.
+
+## 3. Analyze and fix Automatically
+Use the bugbuddy check -f <file> --fix command to analyze the file and apply suggested fixes directly.
+
+Example
+```bash
+  bugbuddy check -f <path-to-file> --fix
+```
+BugBuddy will:
+- Scan file.
+- Identify errors and provide suggested fixes.
+- Apply fixes directly to the file (with a backup created automatically).
+
+
