@@ -15,7 +15,31 @@ While we wait for takeoff, please take a moment to review the docs. Sleeping is 
     Leverages AI to suggest fixes for code issues.
 
 - Seamless Integration
-    Works with various programming languages and frameworks.
+    Works with vanila js, node.js and react.
 
 - Easy to Use
     Simple CLI commands make debugging accessible and efficient.
+
+## Installation
+To install BugBuddy, ensure you have Node.js installed, then run:
+
+```bash
+  npm install -g bugbuddy
+```
+
+## Usage
+BugBuddy offers simple commands for all your debugging needs:
+
+## 1. Analyze an Error Message Directly
+Use the bugbuddy check command to input an error message directly into the terminal.
+
+```bash
+  bugbuddy check
+```
+You will be prompted to enter your error message.
+BugBuddy will then analyze the error and provide debugging insights, such as the likely cause and suggestions for fixes.
+
+
+bugbuddy check -f app.js --fix
+bugbuddy check 
+bugbuddy check -f app.js
