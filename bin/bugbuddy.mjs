@@ -1,10 +1,11 @@
-#!/usr/bin/env node --loader ts-node/esm
+#!/usr/bin/env node
 
-
+import { BACKEND_URL } from '../config.mjs';
 import { Command } from 'commander';
 import fs from 'fs';
 import axios from 'axios';
 import chalk  from 'chalk';
+
 
 
 const program = new Command();
@@ -28,23 +29,27 @@ program.command('check')
       try {
         //Read
         const content = fs.readFileSync(filePath, 'utf-8');
-        console.log(`Checking ${filePath} for JS errors...`);
+        console.log(`Checking ${filePath} for errors...`);
         await analyzeLogs(content, filePath, fix);
       } catch (err) {
         console.error(chalk.redBright.bold(`\n⛔ Error reading file: ${err.message}`));
       }
     } else {
       // Terminal input handling
-      console.log(`No file provided. Paste your error logs below and press ${chalk.magenta('Ctrl+D')} when done:`);
+      console.log(`No file provided. Paste your error logs below and press ${chalk.magenta('END')} on a new line when done:`);
       let input = '';
       process.stdin.on('data', (chunk) => {
         input += chunk;
-      });
-      process.stdin.on('end', async () => {
-        await analyzeLogs(input.trim(), 'Terminal Input', fix);
+
+        //Trying this out 
+        if (input.trim().endsWith('END')) {
+          process.stdin.pause();
+          const logs = input.trim().replace(/END$/, '').trim();
+          analyzeLogs(logs, 'Terminal Input', fix)
+        }
       });
     }
-  });
+});
 
 // Log analysis function
 async function analyzeLogs(content, source, fix) {
@@ -56,7 +61,7 @@ async function analyzeLogs(content, source, fix) {
   console.log(chalk.blue(`\n📤 Sending logs from ${source} to the backend for analysis...`));
 
   try {
-    const response = await axios.post('http://localhost:5000/analyse', { logs: content,
+    const response = await axios.post(BACKEND_URL, { logs: content,
       // Fix code
       fix: fix,
      });

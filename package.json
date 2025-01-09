@@ -1,8 +1,8 @@
 {
-  "name": "bugbuddy",
-  "version": "1.0.0",
+  "name": "bugbuddy1",
+  "version": "1.0.4",
   "description": "Building a Debugger buddy",
-  "main": "bugbuddy.js",
+  "main": "bugbuddy.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,9 +22,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1"
   },
-  "type": "module",
   "bin": {
-    "bugbuddy": "./bugbuddy.js"
+    "bugbuddy1": "./bin/bugbuddy.mjs"
   },
   "devDependencies": {
     "webpack-cli": "^6.0.1"

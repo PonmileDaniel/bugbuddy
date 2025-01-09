@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import express from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import dotenv from 'dotenv'
@@ -52,7 +54,7 @@ app.post('/analyse', async (req, res) => {
 
         // Code Fix  with Gemini Api 
         try {
-            const prompt = `Analyze the following logs and generate just code to fix the issues and it should just be for javascript:\n\n${logs},`;
+            const prompt = `Analyze the following logs and generate just code to fix the issues and it should just be for javascript and python:\n\n${logs},`;
             const codeFixResponse = await model.generateContent(prompt)
             console.log(codeFixResponse)
             codeFixSuggestion = codeFixResponse.response?.text() || 'No code fix generated';

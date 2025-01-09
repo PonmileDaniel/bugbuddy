@@ -24,7 +24,7 @@ While we wait for takeoff, please take a moment to review the docs. Sleeping is 
 To install BugBuddy, ensure you have Node.js installed, then run:
 
 ```bash
-  npm install -g bugbuddy
+  npm install -g bugbuddy1
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Use the bugbuddy check command to input an error message directly into the termi
 
 Example
 ```bash
-  bugbuddy check
+  bugbuddy1 check
 ```
 You will be prompted to enter your error message.
 BugBuddy will then analyze the error and provide debugging insights, such as the likely cause and suggestions for fixes.
@@ -47,7 +47,7 @@ Use the bugbuddy check -f <file> command to scan a JavaScript file for errors.
 
 Example
 ```bash
-  bugbuddy check -f <path-to-file>
+  bugbuddy1 check -f <path-to-file>
 ```
 BugBuddy will:
 - Parse the <path-to-file> eg app.js file.
@@ -60,7 +60,7 @@ Use the bugbuddy check -f <file> --fix command to analyze the file and apply sug
 
 Example
 ```bash
-  bugbuddy check -f <path-to-file> --fix
+  bugbuddy1 check -f <path-to-file> --fix
 ```
 BugBuddy will:
 - Scan file.
@@ -88,3 +88,4 @@ We welcome contribution  to BugBuddy! Please follow these steps:
 
 Happy Debugging!
 The flight has landed successfully!!!🎉✈️
+
